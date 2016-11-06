@@ -1,0 +1,119 @@
+.navbar
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	width: 100%
+	height: 60px
+	border-bottom: 2px solid  #bbb
+	z-index: 999
+	.left
+		float: left
+	.right
+		float: right
+	.level-selector
+		position: relative
+		height: 60px
+		.label
+			float: left
+			width: 60px
+			height: 60px
+			line-height: 60px
+			font-size: 14px
+			text-align: center
+			font-weight: bold
+			color: #333
+		.select
+			position: relative
+			width: 500px
+			height: 60px
+			margin-left: 60px
+			border:
+				left: 1px solid  #ccc
+				right: 1px solid  #ccc
+			box-sizing: border-box
+			cursor: pointer
+			transition: all .15s ease
+			&::after
+				content: "\f35f"
+				position: absolute
+				top: 0
+				right: 0
+				width: 40px
+				height: 60px
+				line-height: 60px
+				text-align: center
+				font-size: 20px
+				color: #555
+				font-family: "Ionicons"
+				transition: color .15s ease
+			.value
+				margin-left: 15px
+				line-height: 60px
+				font-size: 18px
+		.dropdown
+			position: absolute
+			top: 80px
+			left: 60px
+			width: 500px
+			visibility: hidden
+			background: #fff
+			border: 1px solid  #ccc
+			box-sizing: border-box
+			z-index: 9999
+			opacity: 0
+			transition: all .3s cubic-bezier(0.215, 0.61, 0.355, 1)
+			.item
+				height: 35px
+				padding: 0 15px
+				line-height: 35px
+				cursor: pointer
+				transition: all .15s ease
+				&:not(:last-child)
+					border-bottom: 1px solid  #ccc
+				&:hover
+					background: $blue
+					color: #fff
+		&:not(.open)
+			.select
+				&:hover
+					background: $blue
+					border-color: $blue
+					color: #fff
+					&::after
+						color: #fff
+		&.open
+			.select
+				background: #eee
+			.dropdown
+				visibility: visible
+				top: 60px
+				opacity: 1
+				transition: all .6s cubic-bezier(0.215, 0.61, 0.355, 1)
+
+	.navbar-btn
+		float: right
+		width: 70px
+		height: 60px
+		background: none
+		border: none
+		outline: none
+		line-height: 60px
+		text-align: center
+		font-size: 30px
+		color: #444
+		cursor: pointer
+		transition: all .15s ease
+		&.generate
+			&:hover
+				background: $yellow
+				color: #fff
+		&.open-cs
+			&.open,
+			&:hover
+				background: $purple
+				color: #fff
+		&.clear
+			&:hover
+				background: $red
+				color: #fff

@@ -1,0 +1,1 @@
+void led_flash(int);

@@ -1,0 +1,15 @@
+html, body
+	width: 100%
+	height: 100%
+
+.scrollbar-blue
+	&::-webkit-scrollbar
+		width: 8px
+		background: #ddd
+	&::-webkit-scrollbar-button
+		display: none
+	&::-webkit-scrollbar-thumb
+		background: #bbb
+	&:hover
+		&::-webkit-scrollbar-thumb
+			background: lighten($blue, 10%)

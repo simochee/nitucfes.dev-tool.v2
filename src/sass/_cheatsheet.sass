@@ -1,0 +1,85 @@
+.cheatsheet
+	position: absolute
+	top: 60px
+	right: 0
+	bottom: 0
+	width: 0
+	background: $purple
+	z-index: 1500
+	color: #fff
+	user-select: none
+	cursor: default
+	transition: all .25s ease
+	&.open
+		width: 320px
+	.container
+		overflow: hidden
+		position: relative
+		width: 100%
+		height: 100%
+		box-sizing: border-box
+		h3
+			margin: 15px 20px
+			width: 280px
+			font-weight: bold
+			font-size: 18px
+			line-height: 30px
+			span
+				margin-right: 6px
+		.body
+			position: absolute
+			top: 50px
+			left: 25px
+			bottom: 15px
+			width: 280px
+			overflow-y: scroll
+			&::-webkit-scrollbar
+				width: 5px
+				background: rgba(#000, 0.1)
+			&::-webkit-scrollbar-button
+				display: none
+			&::-webkit-scrollbar-thumb
+				background: rgba(#000, 0.2)
+				&:active
+					background: rgba(#000, 0.4)
+			h4
+				margin-top: 10px
+				font-size: 14px
+				line-height: 20px
+				span
+					margin-right: 6px
+			ul
+				li
+					display: flex
+					align-items: center
+					padding: 8px 20px 8px 10px
+					font-size: 12px
+					code
+						margin: 0 4px
+						padding: 2px 4px
+						font-size: 90%
+						color: darken($purple, 20%)
+						background: lighten($purple, 20%);
+						border-radius: 4px
+						box-sizing: border-box
+					kbd
+						margin: 0 4px
+						padding: 2px 4px
+						font-size: 90%
+						color: ligten($purple, 40%)
+						background: darken($purple, 30%)
+						border-radius: 4px
+						box-sizing: border-box
+					p
+						flex: 1
+						margin-left: 8px
+						line-height: 16px
+					.note
+						padding-left: 1em
+						text-indent: -1em
+						text-align: center
+						color: lighten($purple, 40%)
+						&::before
+							content: "\f149"
+							font-family: Ionicons
+							margin-right: 4px
