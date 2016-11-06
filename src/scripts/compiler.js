@@ -12,9 +12,11 @@ const actions = {
 	'car.left': 'motor_lt();',
 	'car.right': 'motor_rt();',
 	'car.fwd.slow': 'motor_fwd_slow();',
-	'car.rev.slow': 'motor_rev_sloq();',
+	'car.rev.slow': 'motor_rev_slow();',
 	'car.left.ra': 'motor_lt_ra();',
-	'car.right.ra': 'motor_rt_ra();'
+	'car.right.ra': 'motor_rt_ra();',
+	'led.flash': 'led_flash()',
+	'led.stop': 'led_stop()'
 }
 
 const tabs = (num) => {
