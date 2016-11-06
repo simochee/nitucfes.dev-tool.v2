@@ -1,5 +1,6 @@
 const Clipboard = require('clipboard');
 const clipboard = new Clipboard('#genCode');
+const anime = require('animejs');
 const u = require('./utils');
 const editor = require('./editor');
 
@@ -60,6 +61,15 @@ module.exports = {
 		$('#clear').on('click', function(e) {
 			u.$elem.editor.val('').focus();
 			editor.update();
+		});
+	},
+	clipboard: () => {
+		clipboard.on('success', (e) => {
+			const $elem = $('#clipboard');
+			$elem.addClass('show');
+			setTimeout(() => {
+				$elem.removeClass('show');
+			}, 1500);
 		});
 	}
 }
