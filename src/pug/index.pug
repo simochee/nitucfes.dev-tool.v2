@@ -23,9 +23,10 @@ html(lang="ja")
 					span.ion-code
 				.navbar-btn.clear#clear
 					span.ion-trash-a
-		textarea#editor.editor.scrollbar-blue(placeholder="// Easy Driving Robot Editor\nif(center == black) {\n\tcar.stop;\n} else {\n\tcar.fwd;\n}")
-		pre
-			code#result.result.scrollbar-blue.cpp
+		.main-content
+			textarea#editor.editor.scrollbar-blue(placeholder="// Easy Driving Robot Editor\nif(center == black) {\n\tcar.stop;\n} else {\n\tcar.fwd;\n}" spellcheck="false")
+			pre
+				code#result.result.scrollbar-blue.cpp
 		.cheatsheet#cheatsheet
 			.container
 				h3
@@ -56,8 +57,9 @@ html(lang="ja")
 							p 条件分岐がない場合に必ず記述
 						li
 							p.note
-								| 条件演算子は
+								| 演算子は
 								code ==
+								code &&
 								| のみ使用できます
 
 					h4
@@ -80,8 +82,23 @@ html(lang="ja")
 							code car.left
 							p 左旋回させる
 						li
+							code car.fwd.slow;
+							p 低速前進させる
+						li
+							code car.rev.slow;
+							p 低速後進させる
+						li
+							code car.left.ra
+							p 左旋回（直角）させる
+						li
+							code car.left.ra
+							p 右旋回（直角）させる
+						li
 							code led.flash
 							p 中央のLEDを点滅させる
+						li
+							code led.end
+							p LEDのイベントを止める
 					h4
 						span.ion-cube
 						| キーボードショートカット
@@ -106,12 +123,10 @@ html(lang="ja")
 								| を記述してください
 						li
 							p.note
-								| 仕様上、余計な文字列などが含まれていても
-								| 正しくコンパイルされることがあります
-						li
-							p.note
-								| ifのネストは最大1層までです。
-								| これを超えると正しくコンパイルされません
+								| 仕様上、条件分岐をネストすることはできません。
+								| ネストが必要な場合は
+								code &&
+								| で条件をつなげてください
 
 
 		script(src="bundle.js")
