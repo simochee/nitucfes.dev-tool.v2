@@ -64,10 +64,12 @@ module.exports = {
 		});
 	},
 	clipboard: () => {
+		let timer;
 		clipboard.on('success', (e) => {
 			const $elem = $('#clipboard');
 			$elem.addClass('show');
-			setTimeout(() => {
+			clearTimeout(timer);
+			timer = setTimeout(() => {
 				$elem.removeClass('show');
 			}, 1500);
 		});
